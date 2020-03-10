@@ -5,6 +5,7 @@ public class Conta {
 	private double saldo;
 	private double creditar;
 	private double debitar;
+	public Cliente cliente;
 	
 	
 	public double getSaldo() {
@@ -28,7 +29,7 @@ public class Conta {
 		return valor;
 	}
 	
-	public void getDebitar(double valor) {
+	public void debitar(double valor) {
 		saldo -= valor;
 	}
 	
