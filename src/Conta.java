@@ -1,15 +1,36 @@
 
 public class Conta {
 
-	public String conta = "23.456-7";
-	double saldo = 1000;
+	private String conta;
+	private double saldo;
 	
-	void debitar(double saldo) {
-		this.saldo -= saldo;
+	public String getConta() {
+		return conta;
+	}
+
+	public void setConta(String conta) {
+		this.conta = conta;
+	}
+
+	public double getSaldo() {
+		return saldo;
+	}
+
+	public void setSaldo(double saldo) {
+		this.saldo = saldo;
+	}
+
+	void debitar(double valor) {
+		saldo -= valor;
 	}
 	
-	void creditar(double saldo) {
-		this.saldo += saldo;
+	void creditar(double valor) {
+		saldo += valor;
+	}
+	
+	void transferir(Conta contaDestino, double valor) {
+		debitar(valor);
+		contaDestino.creditar(valor);
 	}
 	
 }
